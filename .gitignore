@@ -1,0 +1,30 @@
+# CMake build directories
+build/
+build_msvc/
+build_*/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+install_manifest.txt
+
+# Compiled binaries
+*.exe
+*.dll
+*.pdb
+*.ilk
+*.exp
+*.lib
+*.obj
+
+# Telemetry output
+telemetry.csv
+
+# IDE / OS artifacts
+.vs/
+*.user
+*.suo
+.DS_Store
+Thumbs.db
+
+# FetchContent cache (Eigen, nlohmann/json)
+_deps/
