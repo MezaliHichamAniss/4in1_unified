@@ -1,0 +1,9 @@
+{
+  "name": "Your Name",
+  "headline": "Masterstudent Regelungstechnik & Automatisierung",
+  "skills": ["C", "C++", "Python", "SPS", "MATLAB", "Simulink", "VHDL"],
+  "domains": ["Regelungstechnik", "Automatisierung", "Embedded Systems", "IoT", "Signalverarbeitung"],
+  "languages": ["Deutsch", "English", "Französisch", "Arabisch"],
+  "availability": "20h/week",
+  "location": "Friedberg (Hessen)"
+}

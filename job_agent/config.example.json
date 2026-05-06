@@ -1,0 +1,67 @@
+{
+  "profile": {
+    "title_keywords": ["Werkstudent", "Werkstudentin", "Working Student", "Student Assistant"],
+    "fields": ["Regelungstechnik", "Automatisierung", "Embedded", "IoT", "Control", "Automation"],
+    "locations": ["Friedberg", "Frankfurt", "Gießen", "Darmstadt", "Wiesbaden", "Hessen", "Remote"],
+    "languages": ["Deutsch", "English"],
+    "hours_per_week_max": 20,
+    "require_werkstudent": true
+  },
+  "sources": [
+    {
+      "name": "Sample Jobs",
+      "type": "static",
+      "path": "sample_jobs.json",
+      "enabled": true
+    },
+    {
+      "name": "Indeed RSS Example",
+      "type": "rss",
+      "url": "https://de.indeed.com/jobs?q=werkstudent+regelungstechnik&l=hessen&fromage=7&rss=1",
+      "timeout_seconds": 10,
+      "enabled": false
+    },
+    {
+      "name": "Company API Example",
+      "type": "json",
+      "url": "https://company.example.com/jobs.json",
+      "items_path": "jobs",
+      "mapping": {
+        "id": "id",
+        "title": "title",
+        "company": "company",
+        "location": "location",
+        "url": "applyUrl",
+        "description": "description",
+        "tags": "tags",
+        "language": "language",
+        "hours_per_week": "hours",
+        "posted_at": "postedAt"
+      },
+      "timeout_seconds": 10,
+      "enabled": false
+    }
+  ],
+  "output": {
+    "report_dir": "reports",
+    "formats": ["markdown", "csv", "json"],
+    "email": {
+      "enabled": false,
+      "smtp_host": "smtp.example.com",
+      "smtp_port": 587,
+      "username": "user@example.com",
+      "password": "CHANGE_ME",
+      "from": "user@example.com",
+      "to": ["user@example.com"],
+      "subject": "Werkstudent job matches"
+    }
+  },
+  "scheduler": {
+    "interval_minutes": 180
+  },
+  "tracking": {
+    "file": "data/applications.csv",
+    "seen_file": "data/seen.json",
+    "auto_add_min_score": 2.0
+  }
+}
