@@ -16,6 +16,10 @@ cmake-build-*/
 *.user
 *.suo
 *.sln.cache
+
+# Python
+__pycache__/
+*.pyc
 CMakeCache.txt
 CMakeFiles/
 cmake_install.cmake
