@@ -26,5 +26,12 @@ install_manifest.txt
 *.csv
 log_*.csv
 
+# Job agent data
+job_agent/config.json
+job_agent/cv.json
+job_agent/data/
+job_agent/reports/
+job_agent/*.sqlite
+
 # macOS
 .DS_Store

@@ -4,6 +4,20 @@ Exact C++ port of `4in1_unified.py` – vision, 4 controllers, BLE, 60+ FPS live
 
 ---
 
+## 🔎 Job Search Agent (Werkstudent)
+
+This repo also includes a **standalone Python job-search agent** (separate from the car app) for finding and ranking Werkstudent roles based on a CV.
+
+```bash
+cp job_agent/config.example.json job_agent/config.json
+cp job_agent/cv.example.json job_agent/cv.json
+python -m job_agent.main
+```
+
+See `job_agent/README.md` for sources, filters, and scheduler details.
+
+---
+
 ## 🚀 Quick Start (Windows)
 
 > **5 steps from zero to running.**

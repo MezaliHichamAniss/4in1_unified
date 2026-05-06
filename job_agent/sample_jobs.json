@@ -1,0 +1,26 @@
+[
+  {
+    "job_id": "sample-1",
+    "title": "Werkstudent Regelungstechnik / Automatisierung (m/w/d)",
+    "company": "Beispiel GmbH",
+    "location": "Frankfurt am Main",
+    "url": "https://example.com/jobs/werkstudent-regelungstechnik",
+    "description": "Unterstützung bei Regelungssystemen, SPS-Programmierung und IoT-Projekten.",
+    "tags": ["SPS", "Regelungstechnik", "IoT"],
+    "language": "Deutsch",
+    "hours_per_week": 20,
+    "posted_at": "2026-05-01"
+  },
+  {
+    "job_id": "sample-2",
+    "title": "Working Student Embedded Systems (m/f/d)",
+    "company": "TechMotion AG",
+    "location": "Darmstadt",
+    "url": "https://example.com/jobs/working-student-embedded",
+    "description": "Embedded C/C++, Sensorik, Echtzeitsysteme, Signalverarbeitung.",
+    "tags": ["C", "C++", "Embedded", "Signal Processing"],
+    "language": "English",
+    "hours_per_week": 18,
+    "posted_at": "2026-05-03"
+  }
+]
