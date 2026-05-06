@@ -33,6 +33,7 @@ Edit `job_agent/config.json` and add sources:
 - **Static** (local JSON export)
 
 Set `"enabled": true` for any source you want active.
+You can also set `timeout_seconds` per source to avoid hanging requests.
 
 ## Reports
 Reports are written to `job_agent/reports/`:

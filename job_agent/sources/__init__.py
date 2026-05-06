@@ -17,7 +17,13 @@ def build_sources(configs: Iterable[dict[str, Any]], base_dir: Path) -> list[Job
         source_type = config.get("type")
         name = config.get("name") or source_type or "source"
         if source_type == "rss":
-            sources.append(RssSource(name, config["url"]))
+            sources.append(
+                RssSource(
+                    name,
+                    config["url"],
+                    float(config.get("timeout_seconds", 10.0)),
+                )
+            )
         elif source_type == "json":
             sources.append(
                 JsonApiSource(
@@ -25,6 +31,7 @@ def build_sources(configs: Iterable[dict[str, Any]], base_dir: Path) -> list[Job
                     config["url"],
                     config.get("items_path"),
                     config.get("mapping", {}),
+                    float(config.get("timeout_seconds", 10.0)),
                 )
             )
         elif source_type == "static":

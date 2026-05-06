@@ -18,6 +18,7 @@
       "name": "Indeed RSS Example",
       "type": "rss",
       "url": "https://de.indeed.com/jobs?q=werkstudent+regelungstechnik&l=hessen&fromage=7&rss=1",
+      "timeout_seconds": 10,
       "enabled": false
     },
     {
@@ -37,6 +38,7 @@
         "hours_per_week": "hours",
         "posted_at": "postedAt"
       },
+      "timeout_seconds": 10,
       "enabled": false
     }
   ],

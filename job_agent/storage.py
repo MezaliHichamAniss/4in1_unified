@@ -15,7 +15,7 @@ def ensure_dir(path: Path) -> None:
 def job_key(job: Job) -> str:
     base = job.job_id or job.url or f"{job.title}|{job.company}"
     payload = f"{job.source}|{base}".encode("utf-8")
-    return hashlib.sha1(payload).hexdigest()
+    return hashlib.sha256(payload).hexdigest()
 
 
 class SeenStore:

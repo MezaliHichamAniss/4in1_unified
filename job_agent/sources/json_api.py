@@ -27,11 +27,19 @@ def _get_by_path(data: Any, path: str) -> Any:
 
 
 class JsonApiSource(JobSource):
-    def __init__(self, name: str, url: str, items_path: str | None, mapping: dict[str, str]) -> None:
+    def __init__(
+        self,
+        name: str,
+        url: str,
+        items_path: str | None,
+        mapping: dict[str, str],
+        timeout: float = 10.0,
+    ) -> None:
         super().__init__(name)
         self.url = url
         self.items_path = items_path
         self.mapping = mapping
+        self.timeout = timeout
 
     def _extract(self, item: dict[str, Any], key: str) -> Any:
         path = self.mapping.get(key)
@@ -40,7 +48,7 @@ class JsonApiSource(JobSource):
         return _get_by_path(item, path)
 
     def fetch(self) -> Iterable[Job]:
-        with urllib.request.urlopen(self.url) as response:
+        with urllib.request.urlopen(self.url, timeout=self.timeout) as response:
             data = json.loads(response.read().decode("utf-8"))
         items = _get_by_path(data, self.items_path) if self.items_path else data
         if not isinstance(items, list):

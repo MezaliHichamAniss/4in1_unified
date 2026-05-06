@@ -44,12 +44,13 @@ def _split_title_company(title: str) -> tuple[str, str]:
 
 
 class RssSource(JobSource):
-    def __init__(self, name: str, url: str) -> None:
+    def __init__(self, name: str, url: str, timeout: float = 10.0) -> None:
         super().__init__(name)
         self.url = url
+        self.timeout = timeout
 
     def fetch(self) -> Iterable[Job]:
-        with urllib.request.urlopen(self.url) as response:
+        with urllib.request.urlopen(self.url, timeout=self.timeout) as response:
             data = response.read()
         root = ET.fromstring(data)
         items = root.findall(".//item")
